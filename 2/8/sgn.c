@@ -4,12 +4,12 @@
 
 int32_t sgn(int32_t x)
 {
-    return (x >> 31 | ((-x >> 1) & 0x40000000) >> 30);
+    return x >> 31 | (-x >> 31) & 0x1;
 }
 
 int main()
 {
-    printf("%d", sgn(-21313));
+    printf("%d", sgn(0));
 }
 
 
